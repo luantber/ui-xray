@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="/static/css/icon.css" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/static/css/materialize.min.css"  media="screen,projection"/>
+    <!-- <script src="/static/js/vue.js"></script> -->
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body>
+
+    <nav class="">
+        <div class="nav-wrapper container ">
+          <a href="#" class="brand-logo right">UI XRAY</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <!-- <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">JavaScript</a></li> -->
+          </ul>
+        </div>
+      </nav>
+
+      <div class="row" >
+          <div class="container" style="padding-top: 15px ">
+            
+            <div class="col s2">
+                <img class="materialboxed" src="/static/demo/1.png" alt="" height="200px" >
+                Especificación
+            </div>
+
+            <div class="col s2">
+                <img class="materialboxed" src="/static/demo/1_i.png" alt="" height="200px" >
+                Implementación
+            </div>
+
+            <div class="col s2">
+                <img class="materialboxed" src="/static/imgs/b.jpg" alt="" height="200px" >
+                Diferencias Exactas
+            </div>
+
+            <div class="col s2">
+                <img class="materialboxed" src="/static/imgs/i.jpg" alt="" height="200px" >
+                Diferencias Gray
+            </div>
+
+            <div class="col s2">
+                <img class="materialboxed" src="/static/imgs/blend.jpg" alt="" height="200px" >
+                Image Blended
+            </div>
+
+            <div class="col s2">
+                <img class="materialboxed" src="/static/imgs/defectos.jpg" alt="" height="200px" >
+                Defectos 
+           </div>
+           
+              
+          </div>
+      </div>
+
+      <div class="row">
+            <div class="col s4">
+                <table class="highlight">
+                    <thead>
+                      <tr>
+                          <th>Defecto id</th>
+                          <th>x</th>
+                          <th>y</th>
+                          <th>w</th>
+                          <th>h</th>
+                      </tr>
+                    </thead>
+            
+                    <tbody>
+                
+                    {% for caja in cajas %}
+                      <tr onclick="document.getElementById('f').src='http://localhost:5000/view/{{caja[0]}}'" >
+                        <td >{{caja[0]}}</td>
+                        <td >{{caja[1]}}</td>
+                        <td >{{caja[2]}}</td>
+                        <td >{{caja[3]}}</td>
+                        <td >{{caja[4]}}</td>
+                      </tr>
+                      
+                    {% endfor %} 
+                    </tbody>
+                  </table>
+            </div>
+ 
+            <div class="col s8 ">
+                <iframe id="f" src="http://localhost:5000/view/1" frameborder="0" scrolling="yes" width="100%" height="500px" ></iframe>
+            </div>
+      </div>
+
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="/static/js/materialize.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.materialboxed');
+            var instances = M.Materialbox.init(elems, {});
+        });
+
+    </script>
+  </body>
+</html>
