@@ -1,2 +1,11 @@
 # ui-xray
-UI XRay Paper implamentation
+## Luis Bernal
+
+Requiere las siguientes librerías:
+- opencv
+- scikit learn
+- flask
+
+```
+python main.py
+```
