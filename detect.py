@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+from sklearn.cluster import KMeans
 
 def detect(especificacion,implementacion):
     i1 = cv2.imread(especificacion)
@@ -114,9 +115,25 @@ def get_boxes(imagen,nombre,spec_impl):
         x,y,w,h = cv2.boundingRect(cnt)
 
         if w>30 and h>25:
-            cajas.append( [id,x,y,w,h] )
+            
 
             crop_img = i1[y:y+h, x:x+w]
+            
+            ## k means
+
+
+
+            km = KMeans(n_clusters=2)
+            crop_r = crop_img.reshape( (-1,3))
+            # print(i1_r)
+            km.fit(crop_r)
+
+            # print(km.cluster_centers_)
+            # print(km.labels_)
+
+            ## 
+            cajas.append( [id,x,y,w,h,km.cluster_centers_[0],km.cluster_centers_[1]] )
+
 
             cv2.imwrite("static/imgs/"+nombre+"/"+ spec_impl +str(id)+".jpg",crop_img)
             cv2.rectangle(i1_copy,(x,y),(x+w,y+h),(0,255,0),2)

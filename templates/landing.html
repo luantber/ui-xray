@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="/static/css/icon.css" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/static/css/materialize.min.css" media="screen,projection" />
+    <!-- <script src="/static/js/vue.js"></script> -->
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+    <nav class="purple darken-3">
+        <div class="nav-wrapper container ">
+            <a href="#" class="brand-logo right">UI XRAY</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <!-- <li><a href="sass.html">Sass</a></li>
+                    <li><a href="badges.html">Components</a></li>
+                    <li><a href="collapsible.html">JavaScript</a></li> -->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Bienvenido a UI XRAY</h1>
+        <h4>By Luis Antonio Bernal Chahuayo</h4>
+
+        <h5>Corre nuestro demo: </h5>
+
+        <a class="waves-effect waves-light btn-large"
+            onclick="document.getElementById('loader').style.display = 'block' " href="http://localhost:5000/demo">Demo
+        </a>
+
+        <div id="loader" class="progress" style="display: none">
+            <div class="indeterminate"></div>
+        </div>
+
+        <h5>O sube tus propios archivos: </h5>
+
+        <form action="http://localhost:5000/upload-image" method="POST" enctype="multipart/form-data">
+            <div class="row">
+
+                <div class="col s6">
+                    <div class="file-field input-field">
+                        <div class="btn">
+                            <span>Especificación</span>
+                            <input type="file" name="spec">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s6">
+                    <div class="file-field input-field">
+                        <div class="btn">
+                            <span>Implementación</span>
+                            <input type="file" name="impl">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input placeholder="proyecto" id="first_name" name="nombre" type="text" class="validate">
+                    <label for="first_name">Ingrese el nombre de la ventana</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action" onclick="document.getElementById('loader').style.display = 'block'" >Submit
+                    <i class="material-icons right">send</i>
+                  </button>
+        </form>
+
+    </div>
+
+
+
+
+    <script type="text/javascript" src="/static/js/materialize.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.materialboxed');
+            var instances = M.Materialbox.init(elems, {});
+        });
+
+    </script>
+</body>
+
+</html>

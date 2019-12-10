@@ -15,8 +15,8 @@ def union(a,b):
     return area1 + area2 - intersection(a,b)
 
 def get_objetos(impl,spec,folder):
-    if not os.path.exists(folder):
-        os.makedirs(folder)
+    if not os.path.exists("static/imgs/"+folder):
+        os.makedirs("static/imgs/"+folder)
 
     low_level(impl,spec,folder)
 
@@ -34,10 +34,10 @@ def get_objetos(impl,spec,folder):
 
             if intersection(ci,cs) < ci[3]*ci[4]:
                 
-                print("int" , intersection(ci,cs), "uni", union(ci,cs)) 
+                # print("int" , intersection(ci,cs), "uni", union(ci,cs)) 
                 psm = intersection(ci,cs)/union(ci,cs)        
-                print(psm)
-                print()
+                # print(psm)
+                # print()
                 if psm > pares[ci[0]][0] and  not psm >= 1.0 :
                     pares[ci[0]] = ( psm , cs[0] )
 

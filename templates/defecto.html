@@ -1,40 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <div class="container">
-        <h3>Análisis</h3>
+    <!--Import Google Icon Font-->
+    <link href="/static/css/icon.css" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/static/css/materialize.min.css"  media="screen,projection"/>
+    <!-- <script src="/static/js/vue.js"></script> -->
 
-        <div class="col s2">
-            <div class="row" style="display: flex; justify-content: space-around ">
-                <div class="col s1">
+    <!--Let browser know website is optimized for mobile-->
+    
+  </head>
+<body>
+    <div >
+        <h3>Análisis</h3>
+        <div class="container row" style="display: flex; justify-content: space-around ">
+                <div class="col s6">
                     <h4>Implementacion</h4>
-                    <img class="materialboxed" src="/static/imgs/mora/impl{{ defecto }}.jpg" style="border: 2px solid black" alt="" width="200px" >
+                    <img class="materialboxed" src="/static/imgs/{{folder}}/impl{{ defecto }}.jpg" style="border: 2px solid black" alt="" width="200px" >
                     <div>x {{impl_b[1] }} </div>
                     <div>y {{impl_b[2] }} </div>
                     <div>w {{impl_b[3] }} </div>
                     <div>h {{impl_b[4] }} </div>
+                    Color1: <br>    
+                    <div id="rectangle" style="background-color:rgb({{impl_b[5][2]}},{{impl_b[5][1]}},{{impl_b[5][0]}})"> {{impl_b[5]}} </div>
+                    <br>
+                    Color2: <br>
+                    <div id="rectangle" style="background-color:rgb({{impl_b[6][2]}},{{impl_b[6][1]}},{{impl_b[6][0]}})"> {{impl_b[6]}} </div>
+                
+                    
                 </div>
-                <div class="col s1">
+                <div class="col s6">
                     <h4>Specification</h4>
-                    <img class="materialboxed" src="/static/imgs/mora/spec{{ dato[1] }}.jpg" style="border: 2px solid black" alt="" width="200px" >
+                    <img class="materialboxed" src="/static/imgs/{{folder}}/spec{{ dato[1] }}.jpg" style="border: 2px solid black" alt="" width="200px" >
                     <div>x {{ spec_b[1] }}</div>
                     <div>y {{ spec_b[2] }}</div>
                     <div>w {{ spec_b[3] }}</div>
                     <div>h {{ spec_b[4] }}</div>
+                    Color1: <br>  
+                    <div id="rectangle" style="background-color:rgb({{spec_b[5][2]}},{{spec_b[5][1]}},{{spec_b[5][0]}})"> {{spec_b[5]}} </div>
+                    <br>
+                    Color2: <br>
+                    <div id="rectangle" style="background-color:rgb({{spec_b[6][2]}},{{spec_b[6][1]}},{{spec_b[6][0]}})"> {{spec_b[6]}} </div>
 
                 </div>
             </div>
             <div style="padding-top: 50px ">
                 Confianza similaridad: {{dato}}
             </div>
+    
                 
-        </div>
+        
     </div>
 </body>
+
+<style>
+    #rectangle{
+    width:120px;
+    height:7z0px;
+    border: solid 1px;
+    
+}
+</style>
+
 </html>

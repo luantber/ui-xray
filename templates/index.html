@@ -13,7 +13,7 @@
 
   <body>
 
-    <nav class="">
+    <nav class="purple darken-3">
         <div class="nav-wrapper container ">
           <a href="#" class="brand-logo right">UI XRAY</a>
           <ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -28,33 +28,33 @@
 
         <div class="row" >
           
-          <div  style="padding-top: 15px; display: flex ; justify-content: space-around ">
+          <div  style="padding-top: 15px; padding-left: 30px ">
             <div class="col s2">
-                <img class="materialboxed" src="/static/imgs/mora/spec.jpg" alt="" height="200px" >
+                <img class="materialboxed" src="/static/imgs/{{folder}}/spec.jpg" alt="" height="200px" >
                 Diferencia Total
               </div>
             <div class="col s2">
-                <img class="materialboxed" src="/static/imgs/mora/impl.jpg" alt="" height="200px" >
+                <img class="materialboxed" src="/static/imgs/{{folder}}/impl.jpg" alt="" height="200px" >
                 Diferencia Total
               </div>
-              
+
               <div class="col s2">
-                <img class="materialboxed" src="/static/imgs/mora/diferencia_gris.jpg" alt="" height="200px" >
+                <img class="materialboxed" src="/static/imgs/{{folder}}/diferencia_gris.jpg" alt="" height="200px" >
                 Blend Escala De Grises
               </div>
 
               <div class="col s2">
-                <img class="materialboxed" src="/static/imgs/mora/blend.jpg" alt="" height="200px" >
+                <img class="materialboxed" src="/static/imgs/{{folder}}/blend.jpg" alt="" height="200px" >
                Image Blended
               </div>
             
               <div class="col s2">
-                  <img class="materialboxed" src="/static/imgs/mora/spec_cajas.jpg" alt="" height="200px" >
+                  <img class="materialboxed" src="/static/imgs/{{folder}}/spec_cajas.jpg" alt="" height="200px" >
                   Cajas Especificación
                 </div>
                 
               <div class="col s2">
-                  <img class="materialboxed" src="/static/imgs/mora/impl_cajas.jpg" alt="" height="200px" >
+                  <img class="materialboxed" src="/static/imgs/{{folder}}/impl_cajas.jpg" alt="" height="200px" >
                   Cajas Implementación
               </div>
        
@@ -83,7 +83,7 @@
                         <td >{{key}}</td>
                         <td >{{caja[1]}}</td>
                         
-                        <td> <img src="static/imgs/mora/impl{{key}}.jpg" alt="" width="50px"></td>
+                        <td> <img src="static/imgs/{{folder}}/impl{{key}}.jpg" alt="" width="50px"></td>
                         
                         
                       </tr>
