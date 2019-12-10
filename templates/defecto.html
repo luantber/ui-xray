@@ -8,9 +8,32 @@
 </head>
 <body>
     <div class="container">
+        <h3>Análisis</h3>
+
         <div class="col s2">
-                <img class="materialboxed" src="/static/imgs/res/{{ defecto }}.jpg" alt="" height="200px" >
-                Defecto: {{defecto}}
+            <div class="row" style="display: flex; justify-content: space-around ">
+                <div class="col s1">
+                    <h4>Implementacion</h4>
+                    <img class="materialboxed" src="/static/imgs/mora/impl{{ defecto }}.jpg" style="border: 2px solid black" alt="" width="200px" >
+                    <div>x {{impl_b[1] }} </div>
+                    <div>y {{impl_b[2] }} </div>
+                    <div>w {{impl_b[3] }} </div>
+                    <div>h {{impl_b[4] }} </div>
+                </div>
+                <div class="col s1">
+                    <h4>Specification</h4>
+                    <img class="materialboxed" src="/static/imgs/mora/spec{{ dato[1] }}.jpg" style="border: 2px solid black" alt="" width="200px" >
+                    <div>x {{ spec_b[1] }}</div>
+                    <div>y {{ spec_b[2] }}</div>
+                    <div>w {{ spec_b[3] }}</div>
+                    <div>h {{ spec_b[4] }}</div>
+
+                </div>
+            </div>
+            <div style="padding-top: 50px ">
+                Confianza similaridad: {{dato}}
+            </div>
+                
         </div>
     </div>
 </body>

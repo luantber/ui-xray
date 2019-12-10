@@ -23,79 +23,101 @@
           </ul>
         </div>
       </nav>
+      
+      
 
-      <div class="row" >
-          <div class="container" style="padding-top: 15px ">
+        <div class="row" >
+          
+          <div  style="padding-top: 15px; display: flex ; justify-content: space-around ">
+            <div class="col s2">
+                <img class="materialboxed" src="/static/imgs/mora/spec.jpg" alt="" height="200px" >
+                Diferencia Total
+              </div>
+            <div class="col s2">
+                <img class="materialboxed" src="/static/imgs/mora/impl.jpg" alt="" height="200px" >
+                Diferencia Total
+              </div>
+              
+              <div class="col s2">
+                <img class="materialboxed" src="/static/imgs/mora/diferencia_gris.jpg" alt="" height="200px" >
+                Blend Escala De Grises
+              </div>
+
+              <div class="col s2">
+                <img class="materialboxed" src="/static/imgs/mora/blend.jpg" alt="" height="200px" >
+               Image Blended
+              </div>
             
-            <div class="col s2">
-                <img class="materialboxed" src="/static/demo/1.png" alt="" height="200px" >
-                Especificación
-            </div>
-
-            <div class="col s2">
-                <img class="materialboxed" src="/static/demo/1_i.png" alt="" height="200px" >
-                Implementación
-            </div>
-
-            <div class="col s2">
-                <img class="materialboxed" src="/static/imgs/b.jpg" alt="" height="200px" >
-                Diferencias Exactas
-            </div>
-
-            <div class="col s2">
-                <img class="materialboxed" src="/static/imgs/i.jpg" alt="" height="200px" >
-                Diferencias Gray
-            </div>
-
-            <div class="col s2">
-                <img class="materialboxed" src="/static/imgs/blend.jpg" alt="" height="200px" >
-                Image Blended
-            </div>
-
-            <div class="col s2">
-                <img class="materialboxed" src="/static/imgs/defectos.jpg" alt="" height="200px" >
-                Defectos 
-           </div>
-           
+              <div class="col s2">
+                  <img class="materialboxed" src="/static/imgs/mora/spec_cajas.jpg" alt="" height="200px" >
+                  Cajas Especificación
+                </div>
+                
+              <div class="col s2">
+                  <img class="materialboxed" src="/static/imgs/mora/impl_cajas.jpg" alt="" height="200px" >
+                  Cajas Implementación
+              </div>
+       
               
           </div>
-      </div>
-
+        </div>
+        
       <div class="row">
-            <div class="col s4">
-                <table class="highlight">
-                    <thead>
-                      <tr>
-                          <th>Defecto id</th>
-                          <th>x</th>
-                          <th>y</th>
-                          <th>w</th>
-                          <th>h</th>
-                      </tr>
-                    </thead>
-            
-                    <tbody>
+        <div class="col s1"></div>
+        <div class="col s3">
+          <table class="highlight">
+            <thead>
+              <tr>
+                <th>Impl id</th>
+                <th>Spec id</th>
                 
-                    {% for caja in cajas %}
-                      <tr onclick="document.getElementById('f').src='http://localhost:5000/view/{{caja[0]}}'" >
-                        <td >{{caja[0]}}</td>
+                          <th>Foto</th> 
+                          
+                        </tr>
+                      </thead>
+                      
+                      <tbody>
+                        
+                        {% for key,caja in objetos.items() %}
+                        <tr onclick="document.getElementById('f').src='http://localhost:5000/view/{{key}}'" >
+                        <td >{{key}}</td>
                         <td >{{caja[1]}}</td>
-                        <td >{{caja[2]}}</td>
-                        <td >{{caja[3]}}</td>
-                        <td >{{caja[4]}}</td>
+                        
+                        <td> <img src="static/imgs/mora/impl{{key}}.jpg" alt="" width="50px"></td>
+                        
+                        
                       </tr>
                       
                     {% endfor %} 
-                    </tbody>
-                  </table>
-            </div>
- 
-            <div class="col s8 ">
+                  </tbody>
+                </table>
+              </div>
+              
+              <div class="col s8 ">
                 <iframe id="f" src="http://localhost:5000/view/1" frameborder="0" scrolling="yes" width="100%" height="500px" ></iframe>
+              </div>
             </div>
-      </div>
-
-
+            
+            
+            <style>
+      tbody {
+          display:block;
+          height:500px;
+          overflow:auto;
+        }
+              
+        thead, tbody tr {
+          display:table;
+          width:100%;
+          table-layout:fixed;
+        }
+        thead {
+          width: calc( 100% - 1em )
+        }
+        table {
+          width:100%;
+        }
+    </style>
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="/static/js/materialize.js"></script>
     <script>
